@@ -1,0 +1,18 @@
+<span *ngIf="dataReady">
+  <p-fieldset legend="{{componentTitle}}" [toggleable]="true">
+    <div id="cards">
+      <p-card class="card" header="USER">
+        {{user.user}}
+      </p-card>
+      <p-card class="card" header="Previous Login">
+        {{user.prevLogin}}
+      </p-card>
+      <p-card class="card" header="ID">
+        {{user.id}}
+      </p-card>
+      <p-card class="card" header="EMail">
+        {{user.email}}
+      </p-card>
+    </div>
+  </p-fieldset>
+</span>

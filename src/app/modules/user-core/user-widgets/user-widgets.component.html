@@ -1,0 +1,64 @@
+<span *ngIf="dataReady">
+  <p-fieldset legend="{{componentTitle}}" [toggleable]="true">
+    <div id="cards">
+      <p-card class="cardHeader" header="Count">
+        {{widgets.length}}
+      </p-card>
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="[details]" [toggleable]="true">
+    <div id="cards">
+      <p-card class="card" header="{{i}}-{{element.value.originalName}}" *ngFor="let element of widgets; let i = index">
+        <div class="row h4">
+          <div class="col-md-12">{{element.value.description}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">background: {{element.value.background}}</div>
+          <div class="col-md-6">disabled: {{element.value.disabled}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">favorite: {{element.value.favorite}}</div>
+          <div class="col-md-6">mobile ready: {{element.value.mobileReady}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">singleton: {{element.value.singleton}}</div>
+          <div class="col-md-6">visible: {{element.value.visible}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">height: {{element.value.height}}</div>
+          <div class="col-md-6">width: {{element.value.width}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">maximized: {{element.value.maximized}}</div>
+          <div class="col-md-6">minimized: {{element.value.minimized}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-6">position: {{element.value.position}}</div>
+          <div class="col-md-6">userId: {{element.value.userId}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-12">url: {{element.value.url}}</div>
+        </div>
+        <div class="row h6">
+          <div class="col-md-12">iconurls <br /> large: {{element.value.largeIconUrl}} <br /> small: {{element.value.smallIconUrl}}</div>
+        </div>
+        <p-fieldset legend="[groups]" [toggleable]="true">
+          <p-card class="card" header="{{group.id}}-{{group.name}}" *ngFor="let group of element.value.groups; let g = index">
+            <div class="row h6">
+              <div class="col-md-6">stackDefault: {{group.stackDefault}}</div>
+              <div class="col-md-6">totalStacks: {{group.totalStacks}}</div>
+            </div>
+            <div class="row h6">
+              <div class="col-md-6">status: {{group.status}}</div>
+              <div class="col-md-6">automatic: {{group.automatic}}</div>
+            </div>
+            <div class="row h6">
+              <div class="col-md-6">totalWidgets: {{group.totalWidgets}}</div>
+              <div class="col-md-6">totalUsers: {{group.totalUsers}}</div>
+            </div>
+          </p-card>
+        </p-fieldset>
+      </p-card>
+    </div>
+  </p-fieldset>
+</span>

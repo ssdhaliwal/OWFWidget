@@ -1,0 +1,22 @@
+<span *ngIf="dataReady">
+  <p-fieldset legend="{{componentTitle}}" [toggleable]="true">
+    <div id="cards">
+      <p-card class="cardHeader" header="Count">
+        {{dashboards.results}}
+      </p-card>
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="[details]" [toggleable]="true">
+    <div id="cards">
+      <p-card class="card" header="{{i}}-{{element.name}}" *ngFor="let element of dashboards.attributes; let i = index">
+        <div class="row h6">
+          <div class="col-md-6">Created: {{element.createDate}}</div>
+          <div class="col-md-6">Edited: {{element.editedDate}}</div>
+        </div>
+        <div class="row h4">
+          <div class="col-md-12">{{element.description}}</div>
+        </div>
+      </p-card>
+    </div>
+  </p-fieldset>
+</span>

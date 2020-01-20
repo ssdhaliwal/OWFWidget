@@ -1,0 +1,23 @@
+<span *ngIf="dataReady">
+  <p-fieldset legend="{{componentTitle}}" [toggleable]="true">
+    <div id="cards">
+      <p-card class="card" header="Success">
+        {{summary.success}}
+      </p-card>
+      <p-card class="card" header="Count">
+        {{summary.results}}
+      </p-card>
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="[details]" [toggleable]="true">
+    <div id="cards">
+      <p-card class="card" header="{{i}}-{{element.username}}" *ngFor="let element of summary.data; let i = index">
+        Real Name: {{element.userRealName}} <br />
+        Total Stacks: {{element.totalStacks}} <br />
+        Total Groups: {{element.totalGroups}} <br />
+        Total Widgets: {{element.totalWidgets}} <br />
+        Total Dashboards: {{element.totalDashboards}}
+      </p-card>
+    </div>
+  </p-fieldset>
+</span>

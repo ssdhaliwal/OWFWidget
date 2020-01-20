@@ -1,0 +1,7 @@
+<p-fieldset legend="{{componentTitle}}" [toggleable]="true">
+  <div id="cards">
+    <p-card id="owfcard" class="card" header="{{element.value.key}}" *ngFor="let element of containerModel.attributes | keyvalue; let i = index">
+      {{i + 1}}. {{element.value.value}}
+    </p-card>
+  </div>
+</p-fieldset>
